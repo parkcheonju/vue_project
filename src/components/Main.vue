@@ -1,12 +1,12 @@
 <template>
-<router-link to="/detail">
-<div class="card mt-3 mb-3" v-for="(card, index) in recipe" :key="index">
+<div>Test card</div>
+  <div class="card mt-3 mb-3" v-for="(card, index) in recipe" :key="index">
     <div class="row g-0">
       <div class="col-4">
         <img :src="card.image" class="img-fluid rounded-start" alt="..." />
       </div>
       <div class="col-8">
-        <div class="card-body">
+        <div class="card-body" @click="$router.push('/detail/' + card.id)">
           <h5 class="card-title">{{ card.title }}</h5>
           <p class="card-text">{{ card.description }}</p>
           <p class="card-text">
@@ -16,15 +16,14 @@
       </div>
     </div>
   </div>
-</router-link>
 </template>
 
 <script>
 export default {
   name: "AppMain",
-  props : {
-    recipe : Array,
-  }
+  props: {
+    recipe: Array,
+  },
 };
 </script>
 

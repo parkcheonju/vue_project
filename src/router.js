@@ -12,7 +12,7 @@ const routes = [
     component: Main,
   },
   {
-    path: "/detail",
+    path: "/detail/:id",
     component: Detail,
   }
 ];
